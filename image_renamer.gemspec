@@ -18,9 +18,11 @@ useful to me. What I prefer to do, is to give a same name to a series of picture
   spec.license       = "MIT"
 
   spec.executables   << "image_renamer"
-  spec.files         = [ "lib/image_renamer.rb" ]
+  spec.files         = [ "lib/image_renamer.rb",
+                         "lib/image_renamer/renamer.rb",
+                         "lib/image_renamer/entries_validator.rb" ]
   spec.test_files    = [ "spec/image_renamer_spec.rb" ]
   spec.require_paths = [ "lib" ]
 
-  spec.add_development_dependency = "rspec"
+  spec.add_development_dependency "rspec", "~>3.1", ">= 3.1.7"
 end
