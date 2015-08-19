@@ -1,13 +1,9 @@
 class DirectoryStatistic
 
-  def initialize(cwd)
-    @user_files = Dir.entries(cwd).select { |file| ![ ".", "..", ".DS_Store",
-                                                      "entries_validator.rb",
-                                                      "spinner.rb",
-                                                      "file_renamer.rb",
-                                                      "android_file_sorter.rb",
-                                                      "description.rb",
-                                                      "directory_statistic.rb" ].include?(file) }
+  def initialize(current_directory)
+    @user_files = Dir.entries(current_directory).select { |file| ![ ".", "..", ".DS_Store",
+                                                      "android_file_sorter",
+                                                      "android_file_sorter.rb" ].include?(file) }
     @stats = { dates:   {},
                formats: {},
                sum:     0 }

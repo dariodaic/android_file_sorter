@@ -4,12 +4,8 @@ class FileRenamer
   def initialize(current_directory)
     @cwd = current_directory
     @user_files = Dir.entries(@cwd).select { |file| ![ ".", "..", ".DS_Store",
-                                                      "entries_validator.rb",
-                                                      "spinner.rb",
-                                                      "file_renamer.rb",
-                                                      "description.rb",
-                                                      "android_file_sorter.rb",
-                                                      "directory_statistic.rb" ].include?(file) }
+                                                      "android_file_sorter",
+                                                      "android_file_sorter.rb" ].include?(file) }
     @filesets = collect_filesets
     @file_dates = @filesets.keys
   end
@@ -45,7 +41,7 @@ class FileRenamer
         user_filename = gets.chomp.gsub(/\s/, "_")
         user_renaming(date, user_filename)
       else
-        puts "Enter on of the available options."
+        puts "Enter one of the available options."
         options
       end
 
