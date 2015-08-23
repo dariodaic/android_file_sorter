@@ -1,3 +1,4 @@
+# coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
@@ -6,12 +7,13 @@ Gem::Specification.new do |spec|
   spec.author                = "dariodaic"
   spec.name                  = "android_file_sorter"
   spec.version               = "1.0.0"
-  spec.files                 = [ "lib/android_file_sorter.rb,
-                                  lib/android_file_sorter/description.rb,
-                                  lib/android_file_sorter/entries_validator.rb,
-                                  lib/android_file_sorter/directory_statistic.rb,
-                                  lib/android_file_sorter/file_renamer.rb" ]
-  spec.require_paths         = [ "lib" ]
+  spec.files                 = [
+                                 "lib/android_file_sorter.rb",
+                                 "lib/android_file_sorter/directory_statistic.rb",
+                                 "lib/android_file_sorter/entries_validator.rb",
+                                 "lib/android_file_sorter/file_renamer.rb",
+                                 "lib/android_file_sorter/description.rb"
+                               ]
   spec.summary               = %q{Ruby script for renaming files copied from Android OS 4.3.}
 
   # recommended
