@@ -1,9 +1,7 @@
 class DirectoryStatistic
 
   def initialize(current_directory)
-    @user_files = Dir.entries(current_directory).select { |file| ![ ".", "..", ".DS_Store",
-                                                      "android_file_sorter",
-                                                      "android_file_sorter.rb" ].include?(file) }
+    @user_files = Dir.entries(current_directory).select { |file| ![ ".", "..", ".DS_Store"].include?(file) }
     @stats = { dates:   {},
                formats: {},
                sum:     0 }
@@ -23,6 +21,8 @@ class DirectoryStatistic
       @stats[:dates].each { |date, count| puts("  #{date}: #{count}") }
     end
   end
+
+  private
 
   def compile_statistic
     @user_files.each do |file|

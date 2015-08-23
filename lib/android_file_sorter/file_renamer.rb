@@ -3,9 +3,7 @@ class FileRenamer
 
   def initialize(current_directory)
     @cwd = current_directory
-    @user_files = Dir.entries(@cwd).select { |file| ![ ".", "..", ".DS_Store",
-                                                      "android_file_sorter",
-                                                      "android_file_sorter.rb" ].include?(file) }
+    @user_files = Dir.entries(@cwd).select { |file| ![ ".", "..", ".DS_Store" ].include?(file) }
     @filesets = collect_filesets
     @file_dates = @filesets.keys
   end
@@ -51,6 +49,8 @@ class FileRenamer
       end
     end
   end
+
+  private
 
   def automatic_renaming(date)
     @filesets[date].inject(0) do |memo, file|

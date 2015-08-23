@@ -1,7 +1,7 @@
-require "./android_file_sorter/description"
-require "./android_file_sorter/entries_validator"
-require "./android_file_sorter/directory_statistic"
-require "./android_file_sorter/file_renamer"
+require "./lib/android_file_sorter/description"
+require "./lib/android_file_sorter/entries_validator"
+require "./lib/android_file_sorter/directory_statistic"
+require "./lib/android_file_sorter/file_renamer"
 require "time"
 
 class AndroidFileSorter
@@ -17,6 +17,4 @@ class AndroidFileSorter
   end
 
 end
-
-AndroidFileSorter.new(Dir.pwd).rename_all
 

@@ -3,7 +3,7 @@ class EntriesValidator
   def initialize(current_directory)
     @cwd = current_directory
     @valid_formats = [ "jpg", "mp4" ]
-    @system_files = [ ".", "..", ".DS_Store", "android_file_sorter", "android_file_sorter.rb" ]
+    @system_files = [ ".", "..", ".DS_Store" ]
   end
 
   def validate_entries
